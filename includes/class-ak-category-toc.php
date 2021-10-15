@@ -139,11 +139,7 @@ class Ak_Category_Toc {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-
 		$plugin_admin = new Ak_Category_Toc_Admin( $this->get_plugin_name(), $this->get_version() );
-
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		$this->loader->add_action( 'after_setup_theme', $plugin_admin, 'ak_activate_new_theme' );
 	}
@@ -156,13 +152,10 @@ class Ak_Category_Toc {
 	 * @access   private
 	 */
 	private function define_public_hooks() {
-
 		$plugin_public = new Ak_Category_Toc_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
 		$this->loader->add_filter( 'template_include', $plugin_public, 'ak_override_category_template' );
+		$this->loader->add_action( 'pre_get_posts', $plugin_public, 'ak_order_by_post_title');
 	}
 
 	/**

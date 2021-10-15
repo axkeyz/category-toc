@@ -14,6 +14,9 @@ get_header();
 $description = get_the_archive_description();
 ?>
 
+<?php $args = array( 'meta_key' => 'order', 'orderby' => 'meta_value', 'order' => 'ASC'); ?>
+<?php $custom_query = new WP_Query(); ?>
+<?php $custom_query->query($args); ?>
 <?php if ( have_posts() ) : ?>
 
 	<header class="page-header alignwide">
@@ -25,7 +28,9 @@ $description = get_the_archive_description();
 
 	<?php while ( have_posts() ) : ?>
 		<?php the_post(); ?>
-		<?php get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); ?>
+		<?php do_action('ak_pre_display_single_category_template'); ?>
+		<?php include(AK_PLUGIN_DIR . 'public/partials/ak-category-toc-public-display-single.php'); ?>
+		<?php do_action('ak_post_display_single_category_template'); ?>
 	<?php endwhile; ?>
 
 	<?php twenty_twenty_one_the_posts_navigation(); ?>

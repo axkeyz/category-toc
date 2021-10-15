@@ -100,4 +100,23 @@ class Ak_Category_Toc_Public {
 
 	}
 
+	/**
+	 * Change the loaded template for the category page
+	 *
+	 * @since    1.0.0
+	 */
+
+	public function ak_override_category_template($template){
+        // Get all categories
+        $ak_all_categories = get_categories();
+
+        foreach ($ak_all_categories as $ak_single_category) {
+            if ( is_category($ak_single_category) ) {
+				// Override with new template if is category
+				$template = AK_PLUGIN_DIR . 'public/partials/ak-category-toc-public-display.php';
+                break;
+            }
+        }
+        return $template;
+    }
 }

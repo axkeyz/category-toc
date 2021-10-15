@@ -15,12 +15,12 @@
  * @wordpress-plugin
  * Plugin Name:       Category-Based TOC
  * Plugin URI:        https://github.com/axkeyz/category-toc
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This plugin adds a bit more customisation to category pages, most notably generating a table of contents.
  * Version:           1.0.0
  * Author:            Aileen Huang
  * Author URI:        https://aileenhuang.dev
  * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License URI:       https://opensource.org/licenses/MIT
  * Text Domain:       ak-category-toc
  * Domain Path:       /languages
  */
@@ -31,11 +31,14 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
+ * Current plugin version
  */
 define( 'AK_CATEGORY_TOC_VERSION', '1.0.0' );
+
+/**
+ * Current plugin directory
+ */
+define( 'AK_PLUGIN_DIR', WP_PLUGIN_DIR . '/ak-category-toc/');
 
 /**
  * The code that runs during plugin activation.

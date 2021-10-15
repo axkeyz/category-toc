@@ -173,6 +173,7 @@ class Ak_Category_Toc {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
+		$this->loader->add_filter( 'template_include', $plugin_public, 'ak_override_category_template' );
 	}
 
 	/**

@@ -9,8 +9,8 @@
  * @link       https://aileenhuang.dev
  * @since      1.0.0
  *
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/includes
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/includes
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/includes
  * @author     Aileen Huang <aileen.huang@outlook.co.nz>
  */
-class Axkeyz_category_toc {
+class Ak_Category_Toc {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Axkeyz_category_toc {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Axkeyz_category_toc_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Ak_Category_Toc_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,12 +67,12 @@ class Axkeyz_category_toc {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'AXKEYZ_CATEGORY_TOC_VERSION' ) ) {
-			$this->version = AXKEYZ_CATEGORY_TOC_VERSION;
+		if ( defined( 'AK_CATEGORY_TOC_VERSION' ) ) {
+			$this->version = AK_CATEGORY_TOC_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'axkeyz_category_toc';
+		$this->plugin_name = 'ak-category-toc';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Axkeyz_category_toc {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Axkeyz_category_toc_Loader. Orchestrates the hooks of the plugin.
-	 * - Axkeyz_category_toc_i18n. Defines internationalization functionality.
-	 * - Axkeyz_category_toc_Admin. Defines all hooks for the admin area.
-	 * - Axkeyz_category_toc_Public. Defines all hooks for the public side of the site.
+	 * - Ak_Category_Toc_Loader. Orchestrates the hooks of the plugin.
+	 * - Ak_Category_Toc_i18n. Defines internationalization functionality.
+	 * - Ak_Category_Toc_Admin. Defines all hooks for the admin area.
+	 * - Ak_Category_Toc_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Axkeyz_category_toc {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-axkeyz_category_toc-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ak-category-toc-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-axkeyz_category_toc-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ak-category-toc-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-axkeyz_category_toc-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ak-category-toc-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-axkeyz_category_toc-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-ak-category-toc-public.php';
 
-		$this->loader = new Axkeyz_category_toc_Loader();
+		$this->loader = new Ak_Category_Toc_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Axkeyz_category_toc_i18n class in order to set the domain and to register the hook
+	 * Uses the Ak_Category_Toc_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Axkeyz_category_toc {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Axkeyz_category_toc_i18n();
+		$plugin_i18n = new Ak_Category_Toc_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +152,7 @@ class Axkeyz_category_toc {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Axkeyz_category_toc_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Ak_Category_Toc_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +168,7 @@ class Axkeyz_category_toc {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Axkeyz_category_toc_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Ak_Category_Toc_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -199,7 +199,7 @@ class Axkeyz_category_toc {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Axkeyz_category_toc_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Ak_Category_Toc_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

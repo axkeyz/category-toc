@@ -6,8 +6,8 @@
  * @link       https://aileenhuang.dev
  * @since      1.0.0
  *
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/includes
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/includes
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/includes
  * @author     Aileen Huang <aileen.huang@outlook.co.nz>
  */
-class Axkeyz_category_toc_Loader {
+class Ak_Category_Toc_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

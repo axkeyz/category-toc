@@ -1,26 +1,26 @@
 <?php
 
 /**
- * The admin-specific functionality of the plugin.
+ * The public-facing functionality of the plugin.
  *
  * @link       https://aileenhuang.dev
  * @since      1.0.0
  *
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/admin
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/public
  */
 
 /**
- * The admin-specific functionality of the plugin.
+ * The public-facing functionality of the plugin.
  *
  * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
+ * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/admin
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/public
  * @author     Aileen Huang <aileen.huang@outlook.co.nz>
  */
-class Axkeyz_category_toc_Admin {
+class Ak_Category_Toc_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -44,7 +44,7 @@ class Axkeyz_category_toc_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
+	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
@@ -55,7 +55,7 @@ class Axkeyz_category_toc_Admin {
 	}
 
 	/**
-	 * Register the stylesheets for the admin area.
+	 * Register the stylesheets for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -65,20 +65,20 @@ class Axkeyz_category_toc_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Axkeyz_category_toc_Loader as all of the hooks are defined
+		 * defined in Ak_Category_Toc_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Axkeyz_category_toc_Loader will then create the relationship
+		 * The Ak_Category_Toc_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/axkeyz_category_toc-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ak-category-toc-public.css', array(), $this->version, 'all' );
 
 	}
 
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Register the JavaScript for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -88,15 +88,15 @@ class Axkeyz_category_toc_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Axkeyz_category_toc_Loader as all of the hooks are defined
+		 * defined in Ak_Category_Toc_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Axkeyz_category_toc_Loader will then create the relationship
+		 * The Ak_Category_Toc_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/axkeyz_category_toc-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ak-category-toc-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

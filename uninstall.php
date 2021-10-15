@@ -22,7 +22,7 @@
  * @link       https://aileenhuang.dev
  * @since      1.0.0
  *
- * @package    Axkeyz_category_toc
+ * @package    Ak_Category_Toc
  */
 
 // If uninstall not called from WordPress, then exit.

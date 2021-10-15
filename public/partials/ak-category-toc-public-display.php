@@ -8,8 +8,8 @@
  * @link       https://aileenhuang.dev
  * @since      1.0.0
  *
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/public/partials
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/public/partials
  */
 ?>
 

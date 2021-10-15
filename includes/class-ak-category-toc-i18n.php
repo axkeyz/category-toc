@@ -9,8 +9,8 @@
  * @link       https://aileenhuang.dev
  * @since      1.0.0
  *
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/includes
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Axkeyz_category_toc
- * @subpackage Axkeyz_category_toc/includes
+ * @package    Ak_Category_Toc
+ * @subpackage Ak_Category_Toc/includes
  * @author     Aileen Huang <aileen.huang@outlook.co.nz>
  */
-class Axkeyz_category_toc_i18n {
+class Ak_Category_Toc_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Axkeyz_category_toc_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'axkeyz_category_toc',
+			'ak-category-toc',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

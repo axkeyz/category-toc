@@ -10,7 +10,7 @@
  *
  * @link              https://aileenhuang.dev
  * @since             1.0.0
- * @package           Axkeyz_category_toc
+ * @package           Ak_Category_Toc
  *
  * @wordpress-plugin
  * Plugin Name:       Category-Based TOC
@@ -21,7 +21,7 @@
  * Author URI:        https://aileenhuang.dev
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       axkeyz_category_toc
+ * Text Domain:       ak-category-toc
  * Domain Path:       /languages
  */
 
@@ -35,34 +35,34 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'AXKEYZ_CATEGORY_TOC_VERSION', '1.0.0' );
+define( 'AK_CATEGORY_TOC_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-axkeyz_category_toc-activator.php
+ * This action is documented in includes/class-ak-category-toc-activator.php
  */
-function activate_axkeyz_category_toc() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-axkeyz_category_toc-activator.php';
-	Axkeyz_category_toc_Activator::activate();
+function activate_ak_category_toc() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ak-category-toc-activator.php';
+	Ak_Category_Toc_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-axkeyz_category_toc-deactivator.php
+ * This action is documented in includes/class-ak-category-toc-deactivator.php
  */
-function deactivate_axkeyz_category_toc() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-axkeyz_category_toc-deactivator.php';
-	Axkeyz_category_toc_Deactivator::deactivate();
+function deactivate_ak_category_toc() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ak-category-toc-deactivator.php';
+	Ak_Category_Toc_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_axkeyz_category_toc' );
-register_deactivation_hook( __FILE__, 'deactivate_axkeyz_category_toc' );
+register_activation_hook( __FILE__, 'activate_ak_category_toc' );
+register_deactivation_hook( __FILE__, 'deactivate_ak_category_toc' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-axkeyz_category_toc.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-ak-category-toc.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-axkeyz_category_toc.php';
  *
  * @since    1.0.0
  */
-function run_axkeyz_category_toc() {
+function run_ak_category_toc() {
 
-	$plugin = new Axkeyz_category_toc();
+	$plugin = new Ak_Category_Toc();
 	$plugin->run();
 
 }
-run_axkeyz_category_toc();
+run_ak_category_toc();

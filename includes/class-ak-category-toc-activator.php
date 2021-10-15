@@ -1,54 +1,33 @@
 <?php
-
-/**
- * Fired during plugin activation
+ /**
+ * This class is fired during the activation of this plugin.
+ *
+ * This class attempts to generate a custom category template based
+ * on the current activated theme. It will be used upon activating
+ * the plugin and upon activating a new theme.
  *
  * @link       https://aileenhuang.dev
  * @since      1.0.0
- *
- * @package    Ak_Category_Toc
- * @subpackage Ak_Category_Toc/includes
- */
-
-/**
- * Fired during plugin activation.
- *
- * This class defines all code necessary to run during the plugin's activation.
- *
- * @since      1.0.0
+ * 
  * @package    Ak_Category_Toc
  * @subpackage Ak_Category_Toc/includes
  * @author     Aileen Huang <aileen.huang@outlook.co.nz>
  */
-class Ak_Category_Toc_Activator {
 
+class AK_Category_Toc_Activator {
 	/**
-	 * Attempt
+	 * Run upon plugin activation
 	 *
-	 * Long Description.
+	 * This function is run when the plugin is first activated.
 	 *
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-		// Get the directory of the theme
-		$theme_directory = get_stylesheet_directory();
-		$ak_public_display = AK_PLUGIN_DIR . "public/partials/ak-category-toc-public-display.php";
-
-		if ($handle = opendir($theme_directory)) {
-			while (false !== ($file = readdir($handle))) {
-				if ('.' === $file || '..' === $file){
-					continue;
-				}
-
-				if(strpos(strtolower($file),'archive') !== false || strpos(strtolower($file),'category') !== false){
-
-					$theme_category_template = copy($theme_directory.'/'.$file, $ak_public_display);
-
-					break;
-				}
-			}
-			closedir($handle);
-		}
+		/**
+		 * This class generates a new custom category template based on
+		 * the current theme
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ak-category-toc-templator.php';
 	}
 
 }

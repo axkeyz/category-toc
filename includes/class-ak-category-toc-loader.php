@@ -1,25 +1,17 @@
 <?php
-
 /**
- * Register all actions and filters for the plugin
+ * This class registers all actions and filters for the plugin.
  *
- * @link       https://aileenhuang.dev
- * @since      1.0.0
- *
- * @package    Ak_Category_Toc
- * @subpackage Ak_Category_Toc/includes
- */
-
-/**
- * Register all actions and filters for the plugin.
- *
- * Maintain a list of all hooks that are registered throughout
+ * Maintains a list of all hooks that are registered throughout
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
+ * @link       https://aileenhuang.dev
+ * @since      1.0.0
+ * 
  * @package    Ak_Category_Toc
  * @subpackage Ak_Category_Toc/includes
- * @author     Aileen Huang <aileen.huang@outlook.co.nz>
+ * @author     axkeyz <aileen.huang@outlook.co.nz>
  */
 class Ak_Category_Toc_Loader {
 

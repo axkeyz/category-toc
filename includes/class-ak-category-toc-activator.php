@@ -2,32 +2,30 @@
  /**
  * This class is fired during the activation of this plugin.
  *
- * This class attempts to generate a custom category template based
- * on the current activated theme. It will be used upon activating
- * the plugin and upon activating a new theme.
+ * This class contains the code necessary to activate this plugin. It is
+ * primarily used to generate a new custom category template based on the 
+ * currently activated theme.
  *
  * @link       https://aileenhuang.dev
  * @since      1.0.0
  * 
  * @package    Ak_Category_Toc
  * @subpackage Ak_Category_Toc/includes
- * @author     Aileen Huang <aileen.huang@outlook.co.nz>
+ * @author     axkeyz <aileen.huang@outlook.co.nz>
  */
-
 class AK_Category_Toc_Activator {
 	/**
-	 * Run upon plugin activation
+	 * This function is run upon plugin activation.
 	 *
-	 * This function is run when the plugin is first activated.
+	 * This function is run when the plugin is first activated and it generates
+	 * a new custom category template based on the current theme.
 	 *
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-		/**
-		 * This class generates a new custom category template based on
-		 * the current theme
-		 */
+		// This class generates a new custom category template based on the current theme
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ak-category-toc-templator.php';
+		new AK_Category_Toc_Templator;
 	}
 
 }

@@ -17,7 +17,7 @@
  * Plugin URI:        https://github.com/axkeyz/category-toc
  * Description:       This plugin adds a bit more customisation to category pages, most notably generating a table of contents.
  * Version:           1.0.0
- * Author:            Aileen Huang
+ * Author:            axkeyz
  * Author URI:        https://aileenhuang.dev
  * License:           GPL-2.0+
  * License URI:       https://opensource.org/licenses/MIT

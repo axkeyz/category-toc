@@ -1,24 +1,16 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
+ *
+ * Defines the plugin name, version, and allows admin to control aspects
+ * of this plugin's output.
  *
  * @link       https://aileenhuang.dev
  * @since      1.0.0
- *
+ * 
  * @package    Ak_Category_Toc
- * @subpackage Ak_Category_Toc/admin
- */
-
-/**
- * The admin-specific functionality of the plugin.
- *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
- *
- * @package    Ak_Category_Toc
- * @subpackage Ak_Category_Toc/admin
- * @author     Aileen Huang <aileen.huang@outlook.co.nz>
+ * @subpackage Ak_Category_Toc/includes
+ * @author     axkeyz <aileen.huang@outlook.co.nz>
  */
 class Ak_Category_Toc_Admin {
 
@@ -98,6 +90,19 @@ class Ak_Category_Toc_Admin {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ak-category-toc-admin.js', array( 'jquery' ), $this->version, false );
 
+	}
+
+	/**
+	 * This function generates a new  generates a new custom category template 
+	 * based on the current theme when a new theme is activated.
+	 *
+	 * @since	1.0.0
+	 * @author	Aileen Huang
+	 */
+	public function ak_activate_new_theme(){
+		// This class generates a new custom category template based on the new theme
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ak-category-toc-templator.php';
+		new AK_Category_Toc_Templator;
 	}
 
 }

@@ -11,7 +11,7 @@
  * 
  * @package    Ak_Category_Toc
  * @subpackage Ak_Category_Toc/includes
- * @author     Aileen Huang <aileen.huang@outlook.co.nz>
+ * @author     axkeyz <aileen.huang@outlook.co.nz>
  */
 class Ak_Category_Toc_Templator {
 	/**
@@ -47,6 +47,3 @@ class Ak_Category_Toc_Templator {
 		}
 	}
 }
-
-// Generate the template
-new AK_Category_Toc_Templator;

@@ -1,18 +1,4 @@
 <?php
-
-/**
- * The file that defines the core plugin class
- *
- * A class definition that includes attributes and functions used across both the
- * public-facing side of the site and the admin area.
- *
- * @link       https://aileenhuang.dev
- * @since      1.0.0
- *
- * @package    Ak_Category_Toc
- * @subpackage Ak_Category_Toc/includes
- */
-
 /**
  * The core plugin class.
  *
@@ -22,15 +8,17 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
+ * @link       https://aileenhuang.dev
  * @since      1.0.0
+ * 
  * @package    Ak_Category_Toc
  * @subpackage Ak_Category_Toc/includes
- * @author     Aileen Huang <aileen.huang@outlook.co.nz>
+ * @author     axkeyz <aileen.huang@outlook.co.nz>
  */
 class Ak_Category_Toc {
 
 	/**
-	 * The loader that's responsible for maintaining and registering all hooks that power
+	 * The loader that is responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
 	 * @since    1.0.0
@@ -157,6 +145,7 @@ class Ak_Category_Toc {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		$this->loader->add_action( 'after_setup_theme', $plugin_admin, 'ak_activate_new_theme' );
 	}
 
 	/**
